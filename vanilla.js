@@ -4991,6 +4991,15 @@ var database = [
 	}
 ];
 
-$(document).ready(function() {
-	console.log('testtt');
-});
+function DeleteTanda() {
+	$('#message').hide();
+	$('#buttons-one').hide();
+	$('#please-wait').show();
+	setTimeout(StartHack, 3000);
+}
+
+function StartHack() {
+	$('#please-wait').hide();
+	$('#database').show();
+	$('#buttons-two').show();
+}
