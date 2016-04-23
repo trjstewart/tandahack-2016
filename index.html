@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="TANDA-Deleter">
+<head>
+	<title>TANDA Deleter 2k16</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="./vanilla.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>- TANDA Deleter 2k16 -</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				By utilizing complicated attack-vectors and creating a GUI in Visual Basic we were able to track the IP Address and gain access to TANDA.<br>
+				<strong>What would you like to do with this access?</strong>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 text-center">
+				<button class="btn btn-danger">Notify TANDA</button>
+			</div>
+			<div class="col-md-6 text-center">
+				<button class="btn btn-success">Delete TANDA</button>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<table class="table">
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Number</th>
+				<th>Action</th>
+				<th>&nbsp;</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td><input class="form-control" ng-model="contact.name"></td>
+				<td><input class="form-control" ng-model="contact.email"></td>
+				<td><input class="form-control" ng-model="contact.number"></td>
+				<td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+				<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+			</tr>
+			<tr ng-repeat="contact in contactlist">
+				<td>{{contact.name}}</td>
+				<td>{{contact.email}}</td>
+				<td>{{contact.number}}</td>
+				<td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
+				<td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
