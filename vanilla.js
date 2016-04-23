@@ -5002,4 +5002,16 @@ function StartHack() {
 	$('#please-wait').hide();
 	$('#database').show();
 	$('#buttons-two').show();
+	// Remeber to change this number to the relevant victim
+	httpGetAsync("https://floating-inlet-43788.herokuapp.com/api/panic?number=" + "61423232323", 0);
+}
+
+function httpGetAsync(theUrl, callback) {
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.onreadystatechange = function() {
+		if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+			callback(xmlHttp.responseText);
+	}
+	xmlHttp.open("GET", theUrl, true); // true for asynchronous
+	xmlHttp.send(null);
 }
